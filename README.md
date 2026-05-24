@@ -1,12 +1,14 @@
 <div align="center">
 
-```
+<pre style="display: inline-block; text-align: left; font-weight: bold; background: none; border: none; padding: 0;">
   ________________  __  _______  ___    ____
  /_  __/ ____/ __ \/  |/  / __ \/   |  / __ \
   / / / __/ / /_/ / /|_/ / /_/ / /| | / / / /
  / / / /___/ _, _/ /  / / ____/ ___ |/ /_/ /
 /_/ /_____/_/ |_/_/  /_/_/   /_/  |_/_____/
-```
+</pre>
+
+<br>
 
 **Your terminal. One click away.**
 
@@ -32,9 +34,9 @@ TermPad puts all of that in a sidebar dashboard. **Click button → command runs
 ## Screenshots
 
 <div align="center">
-<img src="screenshot1.png" width="280" alt="TermPad - Top sections: Open Terminal, Clear & Reset, Recent, Navigate, Git" />
-&nbsp;&nbsp;
-<img src="screenshot2.png" width="280" alt="TermPad - Bottom sections: Git commit flow, Process, Your Own commands, Import/Export" />
+<img src="SS/1.png" width="380" alt="TermPad - Sidebar UI" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="SS/2.png" width="380" alt="TermPad - Custom Actions" />
 </div>
 
 ---
