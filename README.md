@@ -12,7 +12,7 @@
 
 **Your terminal. One click away.**
 
-[![VS Code](https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/vscode)
+[![VS Code](https://img.shields.io/badge/VS%20Code-Extension-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=kaustubhbhoir.termpad)
 [![Antigravity](https://img.shields.io/badge/Google%20Antigravity-Compatible-4285F4?style=flat-square&logo=google&logoColor=white)](https://antigravity-ide.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-a855f7?style=flat-square)](CONTRIBUTING.md)
@@ -20,6 +20,20 @@
 *Works in VS Code · Cursor · Google Antigravity · any VS Code fork*
 
 </div>
+
+---
+
+## 🚀 Installation
+
+You can install **TermPad** directly within your editor or via the web:
+
+### In VS Code or Cursor:
+1. Open the **Extensions** panel (`Ctrl + Shift + X` or `Cmd + Shift + X`).
+2. Search for **`TermPad`** (by `kaustubhbhoir`).
+3. Click **Install**.
+
+### From the Web:
+Visit the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=kaustubhbhoir.termpad) and click **Install**.
 
 ---
 
