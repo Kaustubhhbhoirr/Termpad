@@ -4,6 +4,10 @@
   "description": "A sidebar panel with one-click buttons that send commands directly to the integrated terminal.",
   "version": "0.0.1",
   "publisher": "your-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kaustubhhbhoirr/Termpad.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
