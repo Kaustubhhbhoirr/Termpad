@@ -1,0 +1,39 @@
+{
+  "name": "termpad",
+  "displayName": "TermPad",
+  "description": "A sidebar panel with one-click buttons that send commands directly to the integrated terminal.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "termpad-sidebar",
+          "title": "TermPad",
+          "icon": "$(terminal)"
+        }
+      ]
+    },
+    "views": {
+      "termpad-sidebar": [
+        {
+          "type": "webview",
+          "id": "termpad.panel",
+          "name": "TermPad",
+          "icon": "$(terminal)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

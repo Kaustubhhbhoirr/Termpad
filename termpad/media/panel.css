@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-primary: #1a1a1e;
+    --bg-secondary: #222228;
+    --bg-tertiary: #2a2a32;
+    --bg-hover: #32323c;
+    --bg-active: #3a3a46;
+    --border-primary: rgba(255, 255, 255, 0.06);
+    --border-secondary: rgba(255, 255, 255, 0.1);
+    --border-focus: #c96442;
+    --text-primary: #e8e4df;
+    --text-secondary: #9a958e;
+    --text-muted: #6b665f;
+    --accent: #c96442;
+    --accent-hover: #d47553;
+    --accent-dim: rgba(201, 100, 66, 0.15);
+    --danger: #e05555;
+    --danger-bg: rgba(224, 85, 85, 0.12);
+    --badge-bg: rgba(201, 100, 66, 0.2);
+    --badge-text: #d47553;
+    --transition: 0.12s ease;
+    --radius: 6px;
+    --radius-sm: 4px;
+    --font-mono: 'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+    --font-size: 12px;
+    --font-size-sm: 11px;
+    --font-size-xs: 10px;
+}
+
+body {
+    padding: 12px;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size);
+    background-color: var(--bg-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ─── Sections ─── */
+.section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform var(--transition), opacity var(--transition), border-color var(--transition);
+}
+
+.section:hover {
+    border-color: var(--border-secondary);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: grab;
+    opacity: 0.7;
+    transition: opacity var(--transition);
+    user-select: none;
+}
+
+.section-header:hover {
+    opacity: 1;
+}
+
+.section-drag-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all var(--transition);
+    transform: scale(0.8);
+    width: 16px;
+}
+
+.section:hover .section-drag-handle {
+    visibility: visible;
+    opacity: 0.6;
+    transform: scale(1);
+}
+
+.section-header:active {
+    cursor: grabbing;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.section-dragging {
+    opacity: 0.3;
+    transform: scale(0.97);
+}
+
+.drop-indicator {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border-radius: 1px;
+    margin: -4px 0;
+}
+
+/* ─── Button Grid ─── */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 6px;
+}
+
+/* ─── Buttons ─── */
+button {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 7px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    font-family: var(--font-mono);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    line-height: 1.3;
+}
+
+button:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-secondary);
+    color: var(--text-primary);
+}
+
+button:active {
+    transform: scale(0.96);
+    background-color: var(--bg-active);
+}
+
+/* ─── Custom Button Wrappers ─── */
+.custom-btn-wrapper {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.custom-btn-wrapper .cmd-btn {
+    flex-grow: 1;
+    border-radius: var(--radius-sm);
+    justify-content: flex-start;
+    padding-left: 10px;
+    font-size: var(--font-size-sm);
+    transition: border-radius var(--transition), background-color var(--transition);
+}
+
+.custom-btn-wrapper:hover .cmd-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.custom-btn-wrapper .drag-handle,
+.custom-btn-wrapper .delete-btn {
+    position: static;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: none;
+    transition: all var(--transition);
+}
+
+.custom-btn-wrapper .drag-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    color: var(--text-muted);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    font-size: 12px;
+}
+
+.custom-btn-wrapper .delete-btn {
+    background-color: var(--bg-tertiary);
+    color: var(--danger);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-btn-wrapper:hover .drag-handle {
+    width: 22px;
+    padding: 0 3px;
+    opacity: 0.7;
+}
+
+.custom-btn-wrapper:hover .delete-btn {
+    width: 26px;
+    padding: 0 5px;
+    opacity: 0.7;
+}
+
+.delete-btn:hover {
+    background-color: var(--danger-bg) !important;
+    color: var(--danger) !important;
+    opacity: 1 !important;
+}
+
+/* ─── Inputs ─── */
+input {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 7px 10px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition);
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+/* ─── Search Bar ─── */
+.top-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.search-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px 32px 8px 32px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius);
+    font-size: var(--font-size);
+    color: var(--text-primary);
+}
+
+#search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: var(--text-muted);
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#clear-search-btn {
+    position: absolute;
+    right: 4px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 6px;
+    opacity: 0.4;
+    border-radius: var(--radius-sm);
+}
+
+#clear-search-btn:hover {
+    opacity: 1;
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+
+/* ─── Import/Export Footer ─── */
+.import-export-footer {
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius);
+    margin-top: 4px;
+    align-items: center;
+}
+
+.import-export-footer button {
+    flex: 1;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary);
+    font-size: var(--font-size-sm);
+    padding: 7px 10px;
+}
+
+.import-export-footer button:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--border-secondary);
+}
+
+/* ─── Add Custom Command ─── */
+.add-custom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-primary);
+}
+
+#add-custom-btn {
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+}
+
+#add-custom-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+#add-custom-btn:active {
+    transform: scale(0.97);
+}
+
+/* ─── Multi-command Steps ─── */
+#multi-cmd-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.custom-cmd-input {
+    width: calc(100% - 24px);
+}
+
+#add-step-link {
+    font-size: var(--font-size-xs);
+    color: var(--accent);
+    text-decoration: none;
+    align-self: flex-start;
+    padding: 2px 0;
+    font-family: var(--font-mono);
+    opacity: 0.7;
+    transition: opacity var(--transition);
+}
+
+#add-step-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* ─── Git Commit Popup ─── */
+.inline-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-primary);
+}
+
+.popup-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.popup-actions button {
+    flex: 1;
+}
+
+#git-commit-confirm {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+}
+
+#git-commit-confirm:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ─── Multi Badge ─── */
+.multi-badge {
+    color: var(--badge-text);
+    font-size: var(--font-size-xs);
+    margin-right: 2px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-secondary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
