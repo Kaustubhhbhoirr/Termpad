@@ -231,6 +231,10 @@ class TermpadViewProvider {
             </head>
             <body>
                 <div class="container">
+                    <div class="panel-header">
+                        <span class="panel-title">TermPad</span>
+                        <span class="panel-version">v1.0.0</span>
+                    </div>
                     <div class="top-bar">
                         <div class="search-container">
                             <span class="search-icon">🔍</span>
