@@ -1,5 +1,9 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Kaustubhhbhoirr/Termpad/main/termpad/media/Image.png" width="128" alt="TermPad Logo" />
+
+<br><br>
+
 <pre style="display: inline-block; text-align: left; font-weight: bold; background: none; border: none; padding: 0;">
   ________________  __  _______  ___    ____
  /_  __/ ____/ __ \/  |/  / __ \/   |  / __ \
@@ -48,9 +52,9 @@ TermPad puts all of that in a sidebar dashboard. **Click button → command runs
 ## Screenshots
 
 <div align="center">
-<img src="SS/1.png" width="380" alt="TermPad - Sidebar UI" />
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="SS/2.png" width="380" alt="TermPad - Custom Actions" />
+  <img src="https://raw.githubusercontent.com/Kaustubhhbhoirr/Termpad/main/SS/1.png" width="600" alt="TermPad - Sidebar UI" />
+  <br><br>
+  <img src="https://raw.githubusercontent.com/Kaustubhhbhoirr/Termpad/main/SS/2.png" width="600" alt="TermPad - Custom Actions" />
 </div>
 
 ---
