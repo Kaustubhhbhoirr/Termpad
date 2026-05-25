@@ -2,7 +2,7 @@
   "name": "termpad",
   "displayName": "TermPad",
   "description": "A sidebar panel with one-click buttons that send commands directly to the integrated terminal.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "kaustubhbhoir",
   "icon": "media/Image.png",
   "repository": {
