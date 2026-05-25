@@ -12,7 +12,7 @@
                 { cmd: "cls & echo.", label: "🧨 hard reset" }
             ],
             navigate: [
-                { cmd: "cd %USERPROFILE%", label: "🏠 cd ~" },
+                { cmd: "cd -", label: "↩️ cd -" },
                 { cmd: "cd ..", label: "⬆️ cd .." },
                 { cmd: "cd", label: "📍 pwd" },
                 { cmd: "dir", label: "📂 dir" }
